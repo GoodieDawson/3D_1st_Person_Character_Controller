@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cl88bfs2u8uer"]
+[gd_scene load_steps=7 format=3 uid="uid://cl88bfs2u8uer"]
 
 [ext_resource type="Script" uid="uid://rwuab0tn5sk" path="res://scripts/CharacterStateMachine.gd" id="1_g2els"]
 [ext_resource type="Script" uid="uid://bi650t0alnkdh" path="res://scripts/idle.gd" id="2_qhqgy"]
 [ext_resource type="Script" uid="uid://bleu51jwyu8fq" path="res://scripts/walk.gd" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://bg7bhrepdn7rx" path="res://scripts/fall.gd" id="4_dqkch"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_u8vuu"]
 
@@ -38,6 +39,13 @@ metadata/_custom_type_script = "uid://dhobplmye02h4"
 
 [node name="Walk" type="Node" parent="CharacterStateMachine" node_paths=PackedStringArray("character_body_3d", "camera_mount", "camera_3d")]
 script = ExtResource("3_qhqgy")
+character_body_3d = NodePath("../..")
+camera_mount = NodePath("../../CameraMount")
+camera_3d = NodePath("../../CameraMount/Camera3D")
+metadata/_custom_type_script = "uid://dhobplmye02h4"
+
+[node name="Fall" type="Node" parent="CharacterStateMachine" node_paths=PackedStringArray("character_body_3d", "camera_mount", "camera_3d")]
+script = ExtResource("4_dqkch")
 character_body_3d = NodePath("../..")
 camera_mount = NodePath("../../CameraMount")
 camera_3d = NodePath("../../CameraMount/Camera3D")

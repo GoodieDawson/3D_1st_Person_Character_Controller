@@ -22,6 +22,9 @@ func physics_update(delta: float) -> void:
 	t_bob += delta * character_body_3d.velocity.length() * float(character_body_3d.is_on_floor())
 	camera_3d.transform.origin = headbob(t_bob)
 
+	if !character_body_3d.is_on_floor():
+		character_state_machine.change_state("fall")
+
 	if !direction:
 		character_state_machine.change_state("idle")
 	

@@ -8,3 +8,6 @@ func physics_update(_delta: float) -> void:
 	
 	if direction and character_body_3d.is_on_floor():
 		character_state_machine.change_state("walk")
+
+	if !character_body_3d.is_on_floor():
+		character_state_machine.change_state("fall")
