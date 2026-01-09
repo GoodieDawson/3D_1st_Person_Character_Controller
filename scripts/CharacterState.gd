@@ -3,7 +3,7 @@ class_name CharacterState
 extends Node
 
 var character_state_machine: CharacterStateMachine
-@export var character_body_3d: CharacterBody2D
+@export var character_body_3d: CharacterBody3D
 
 
 func enter() -> void:
